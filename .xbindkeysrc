@@ -1,10 +1,20 @@
 # Volume keys
 
-"amixer set Master 5%+"
+# Without pulse:
+#"amixer set Master 5%+"
+#  XF86AudioRaiseVolume
+
+# Use pulse device to set volume
+"amixer -D pulse sset Master 5%+"
   XF86AudioRaiseVolume
-"amixer set Master 5%-"
+"amixer -D pulse sset Master 5%-"
   XF86AudioLowerVolume
-"amixer set Master toggle"
+"amixer -D pulse sset Master toggle"
   XF86AudioMute
 
+# Backlight keys
+"light -A 5"
+  XF86MonBrightnessUp
+"light -U 5"
+  XF86MonBrightnessDown
 
