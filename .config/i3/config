@@ -196,5 +196,7 @@ new_window 1pixel
 
 
 # Run picom
-# exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec --no-startup-id picom -b
+
+# Run redshift
+ exec --no-startup-id redshift-gtk
