@@ -199,4 +199,12 @@ new_window 1pixel
 exec --no-startup-id picom -b
 
 # Run redshift
- exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift-gtk
+
+# set $PICTUREDIR ~/Pictures
+
+# bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p $PICTUREDIR && mv $f $PICTUREDIR && xclip -selection clipboard -t image/png -i $PICTUREDIR -1 -t $PICTUREDIR | head -1`' # Area selection
+#bindsym --release Shift+Print exec "mkdir -p ~/Pictures/screenshots && maim -s '~/Pictures/screenshots/screenshot_%Y%m%d_%H%M%S.png' && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`" # Area selection
+# bindsym --release Shift+Print exec maim -s > '~/Pictures/screenshots/ss.png' # Area selection
+bindsym Shift+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
